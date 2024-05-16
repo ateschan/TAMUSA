@@ -1,13 +1,9 @@
 #Given a set of ip addresses and ports, enumerate ports & services
 #Scans all common ports by default, unless a ports file is given / all ports specified
 
-#TODO: Implement loading bar
-
 #TODO: Implement colored output
 
-import argparse
-import scan
-import alive_progress
+import argparse, scan
 
 if __name__ == "__main__":
 
@@ -20,12 +16,10 @@ if __name__ == "__main__":
     parser.add_argument('-t','--time',help='time between each scan',type=int)
     args = parser.parse_args()
 
-    #formatting
+    #format known data
     ips=[]
     with open(args.ip) as f:
         for line in f:
             ips.append(line.replace('\n', ''))
 
     scan.syncScan(ips, args.port, args.version, args.all, args.time) 
-   
-    print("Success!")

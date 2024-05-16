@@ -4,6 +4,9 @@ import nmapthon2 as n
 import utils
 from alive_progress import alive_bar
 
+
+#-------------------------------SCAN-----------------------------------
+
 def syncScan(ips, ports, version, allPorts, scanTime):
 
     #translating parsed arguments
