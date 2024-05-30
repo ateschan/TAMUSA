@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 #This is a script used to generate a folder full of random data, with some files repeating
 #
-BASE_FS="/home/ateschan/Programming/Python/TAMUSA/wk2-hashing/bof"
+BASE_FS="bof"
 genfile(){
   #make a handful of directories
   #for each of those directories, a random depth
