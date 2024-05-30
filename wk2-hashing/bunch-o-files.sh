@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #This is a script used to generate a folder full of random data, with some files repeating
-#
+
 BASE_FS="bof"
 genfile(){
   #make a handful of directories
@@ -22,8 +22,6 @@ genfile(){
     done
 }
 
-#every direcotry will call gendir and genfile once, with a random decrease in gendir chance per call
-
 coinflip(){
   #$1 is the percent chance a directory will generate
   #$2 is the built out directory structure
@@ -43,35 +41,23 @@ coinflip(){
   do
     mkdir -p "$BASE_FS$DIR_STRUCT/Dir-$i"
   done
-  
-
   for ((i=1; i<=$DIR_COUNT;i++))
   do
     genfile "$DIR_STRUCT/Dir-$i/"
     coinflip $(($PERCENT_CHANCE - $((RANDOM % 7)) + 1)) "$DIR_STRUCT/Dir-$i" 
   done
-
 }
-
-
-#Number of files
-
 
 #Filename
 FILE=./bof/
-
-
 if [ -d "$FILE" ]
   then 
   echo "$FILE exists, skipping generation"
-
 
 #Generate files and fill with junk
 else 
   echo "Generating a bunch o files...";
   coinflip 10000 ""
 fi
-
-
 
 echo done!
