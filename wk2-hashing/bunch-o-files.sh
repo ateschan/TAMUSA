@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#This is a script used to generate a folder full of random data, with some files repeating
+#This is a script used to generate a folder with random subfolders full of random data, with some files repeating
 
 BASE_FS="bof"
 genfile(){
@@ -33,14 +33,14 @@ coinflip(){
   if [ $PERCENT_CHANCE -lt 5 ]; then
     exit 0
   fi
-
-  #$1 is the current dir
-  #When called this will generate a unique and random amount of diretories within $1
-  #First loop is more or less length
+  
+  #Dir gen
   for ((i=1; i<=$DIR_COUNT;i++))
   do
     mkdir -p "$BASE_FS$DIR_STRUCT/Dir-$i"
   done
+  
+  #File gen, recursive call
   for ((i=1; i<=$DIR_COUNT;i++))
   do
     genfile "$DIR_STRUCT/Dir-$i/"
