@@ -2,10 +2,6 @@
 #Addison Teschan
 #Given a filepath, recursively sift through all files using hashing and permanently erase duplicate items
 
-
-#TODO add to garbage generator to add random file amounts with random subdirectories
-
-
 import argparse, hashlib, os, glob
 if __name__ == "__main__":
 
@@ -15,7 +11,7 @@ if __name__ == "__main__":
     parser.add_argument('-H','--hash',help='Specify hash type used, included filetypes are sha1, sha224, sha256, sha384, sha512, sha3_224, sha3_256, sha3_384, sha3_512, shake_128, shake_256, blake2b, and blake2s and md5 ',type=str)
     args = parser.parse_args()
 
-    #To reduce computational overhead, it would be preferred to hash all the files and compare digests afterward
+    #To reduce computational overhead, it would be preferred to hash all the files and first compare digests afterward
     #Dict, key=filename
     hashes = {}
     md5hash = hashlib.md5()
