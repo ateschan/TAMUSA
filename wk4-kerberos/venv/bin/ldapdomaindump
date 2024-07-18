@@ -1,0 +1,3 @@
+#!/home/ateschan/Programming/Python/TAMUSA/wk4-kerberos/venv/bin/python3
+import ldapdomaindump
+ldapdomaindump.main()
