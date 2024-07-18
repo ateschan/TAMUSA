@@ -1,3 +1,0 @@
-#!/home/ateschan/Programming/Python/TAMUSA/wk4-kerberos/venv/bin/python3
-from ldapdomaindump import convert
-convert.ldd2bloodhound()
